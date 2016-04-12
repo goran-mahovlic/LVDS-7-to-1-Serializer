@@ -1,0 +1,19 @@
+## NUMATO Mimas V2 ucf file
+## http://numato.com/
+## Sample board provided by Numato
+
+CONFIG VCCAUX = "3.3" ;
+
+##Clock signal 100 MHz
+NET "clk100m" LOC = V10 | IOSTANDARD = LVCMOS33 | PERIOD = 100MHz ;
+Net "clk100m" TNM_NET = sys_clk_pin;
+TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin 100 MHz high 50%;
+
+NET "channel1_p"	LOC = "U8"	| IOSTANDARD = LVDS_33; #Pin 1
+NET "channel1_n"	LOC = "V8"	| IOSTANDARD = LVDS_33; #Pin 2
+NET "channel2_p"	LOC = "R8"	| IOSTANDARD = LVDS_33; #Pin 3
+NET "channel2_n"	LOC = "T8"	| IOSTANDARD = LVDS_33; #Pin 4
+NET "channel3_p"	LOC = "R5"	| IOSTANDARD = LVDS_33; #Pin 5
+NET "channel3_n"	LOC = "T5"	| IOSTANDARD = LVDS_33; #Pin 6
+NET "clock_p"		LOC = "T9"	| IOSTANDARD = LVDS_33; #Pin 7
+NET "clock_n"		LOC = "V9"	| IOSTANDARD = LVDS_33; #Pin 8

@@ -5,8 +5,12 @@
 // 
 // Create Date:    20:23:28 07/04/2013 
 // Design Name: 	Video LVDS Serializer
-// Module Name:     maincore 
+// Module Name:     maincore  
 // GitHub: https://github.com/racerxdl/LVDS-7-to-1-Serializer
+// 
+// Edited by Goran Mahovlić to get it work on numato Mimas V2
+// GitHub: https://github.com/goran-mahovlic/LVDS-7-to-1-Serializer
+// Editing Date: 07/04/2016
 //////////////////////////////////////////////////////////////////////////////////
 
 module maincore(
@@ -21,18 +25,19 @@ module maincore(
 	 output clock_n
     );
 
-/*
+
 parameter ScreenX = 1024;
 parameter ScreenY = 768;
 parameter BlankingVertical = 35;
 parameter BlankingHorizontal = 280;
-*/
 
+/*
 parameter ScreenX = 1280;
 parameter ScreenY = 800;
 parameter BlankingVertical = 12;
 parameter BlankingHorizontal = 192;
 
+*/
 wire clo,clk4x,clk_lckd, clkdcm;
 
 reg [5:0] Red = 0;
@@ -48,9 +53,9 @@ reg [10:0] ContadorY = 0; // Contador de linhas
 reg [7:0] SendFrames = 0;
 
 DCM_SP #(
-	.CLKIN_PERIOD	("62.5ns"), // 64MHz Clock from 16MHz Input
-	.CLKFX_MULTIPLY	(4),
-	.CLKFX_DIVIDE 		(1)
+	.CLKIN_PERIOD	("10ns"), // 64MHz Clock from 100MHz Input
+	.CLKFX_MULTIPLY	(5),
+	.CLKFX_DIVIDE 		(8) 
 	)
 dcm_main (
 	.CLKIN   	(clk),
