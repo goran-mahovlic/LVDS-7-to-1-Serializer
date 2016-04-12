@@ -12,3 +12,6 @@ Tested on Spartan 3A Evaluation Kit
 *   ODDR2 used: 4
 
 The Serializer core is composed by `lvds_clockgen.v` and `serializer.v`. But I provided an example of how to use it with `maincore.v`, `video_lvds.v` that is both files for a Video Signal Generator to common notebook LVDS TFT Panels.
+
+Added support for numato Mimas V2
+http://numato.com/mimas-v2-spartan-6-fpga-development-board-with-ddr-sdram/
